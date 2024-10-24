@@ -8,45 +8,35 @@ public class Conta {
 
 	public Conta(String nomeCliente, String cpfCliente, int numeroConta, double saldoInicial) {
 		this.nomeCliente = nomeCliente;
-		this.cpfCliente = cpfCliente;//
+		this.cpfCliente = cpfCliente;
 		this.numeroConta = numeroConta;
 		this.saldo = saldoInicial;
 	}
 
-	public void sacar(double valor) {
-		if (valor > 0 && saldo >= valor) {
+	public boolean sacar(double valor) {
+		if (saldo >= valor) {
 			saldo -= valor;
-			System.out.println("Saque de R$" + valor + " realizado com sucesso.");
-		} else {
-			System.out.println("Saldo insuficiente ou valor inválido.");
+			return true;
 		}
+		return false;
 	}
 
 	public void depositar(double valor) {
-		if (valor > 0) {
-			saldo += valor;
-			System.out.println("Depósito de R$" + valor + " realizado com sucesso.");
-		} else {
-			System.out.println("Valor de depósito inválido.");
-		}
+		saldo += valor;
 	}
 
 	public void transferir(Conta contaDestino, double valor) {
-		if (valor > 0 && saldo >= valor) {
-			this.sacar(valor);
+		if (sacar(valor)) {
 			contaDestino.depositar(valor);
-			System.out.println("Transferência de R$" + valor + " realizada com sucesso para a conta "
-					+ contaDestino.getNumeroConta());
-		} else {
-			System.out.println("Transferência falhou. Verifique o saldo ou o valor.");
 		}
 	}
 
 	public void consultarSaldo() {
-		System.out.println("Saldo atual da conta " + numeroConta + ": R$" + saldo);
+		System.out.println("Saldo da conta " + numeroConta + ": R$" + saldo);
 	}
 
-	public int getNumeroConta() {
-		return numeroConta;
+	public void exibirSaldo() {
+		System.out.println("Nome: " + nomeCliente);
+		System.out.println("Saldo: R$ "+ saldo);
 	}
 }
