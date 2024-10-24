@@ -18,16 +18,16 @@ public class Conta {
 			saldo -= valor;
 			System.out.println("Saque de R$" + valor + " realizado com sucesso.");
 		} else {
-			System.out.println("Saldo insuficiente ou valor invÃ¡lido.");
+			System.out.println("Saldo insuficiente ou valor inválido.");
 		}
 	}
 
 	public void depositar(double valor) {
 		if (valor > 0) {
 			saldo += valor;
-			System.out.println("DepÃ³sito de R$" + valor + " realizado com sucesso.");
+			System.out.println("Depósito de R$" + valor + " realizado com sucesso.");
 		} else {
-			System.out.println("Valor de depÃ³sito invÃ¡lido.");
+			System.out.println("Valor de depósito inválido.");
 		}
 	}
 
@@ -35,10 +35,10 @@ public class Conta {
 		if (valor > 0 && saldo >= valor) {
 			this.sacar(valor);
 			contaDestino.depositar(valor);
-			System.out.println("TransferÃªncia de R$" + valor + " realizada com sucesso para a conta "
+			System.out.println("Transferência de R$" + valor + " realizada com sucesso para a conta "
 					+ contaDestino.getNumeroConta());
 		} else {
-			System.out.println("TransferÃªncia falhou. Verifique o saldo ou o valor.");
+			System.out.println("Transferência falhou. Verifique o saldo ou o valor.");
 		}
 	}
 

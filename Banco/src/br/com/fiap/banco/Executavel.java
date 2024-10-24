@@ -4,7 +4,7 @@ public class Executavel {
     public static void main(String[] args) {
     	
         Conta conta1 = new Conta("Eros Machado", "123.456.789-00", 1001, 1000.00);
-        Conta conta2 = new Conta("Jo√£o Silva", "987.654.321-00", 1002, 2000.00);
+        Conta conta2 = new Conta("Jo„o Silva", "987.654.321-00", 1002, 2000.00);
         Conta conta3 = new Conta("Maria Oliveira", "111.222.333-44", 1003, 3000.00);
         
         conta1.consultarSaldo();
