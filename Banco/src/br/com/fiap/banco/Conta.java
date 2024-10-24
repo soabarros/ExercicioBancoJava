@@ -38,5 +38,6 @@ public class Conta {
 	public void exibirSaldo() {
 		System.out.println("Nome: " + nomeCliente);
 		System.out.println("Saldo: R$ "+ saldo);
+		System.out.println("----------------");
 	}
 }
