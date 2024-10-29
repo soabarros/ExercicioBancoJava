@@ -18,7 +18,7 @@ public class Executavel {
 		conta1.consultarSaldo();
 		conta3.consultarSaldo();
 
-		conta1.saldo = 100000000;
+		conta1.setSaldo(100000000);
 
 	}
 }
