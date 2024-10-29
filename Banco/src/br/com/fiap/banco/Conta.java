@@ -5,13 +5,21 @@ public class Conta {
 	String cpfCliente;
 	int numeroConta;
 	double saldo;
-
-	public Conta(String nomeCliente, String cpfCliente, int numeroConta, double saldoInicial) {
+	
+	
+	//constructor ctrl + 3 (generate constructor)
+	public Conta(String nomeCliente, String cpfCliente, int numeroConta, double saldo) {
+		super();
 		this.nomeCliente = nomeCliente;
 		this.cpfCliente = cpfCliente;
 		this.numeroConta = numeroConta;
-		this.saldo = saldoInicial;
+		this.saldo = saldo;
 	}
+
+
+	
+	
+	
 
 	public boolean sacar(double valor) {
 		if (saldo >= valor) {
