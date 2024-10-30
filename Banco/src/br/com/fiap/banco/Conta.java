@@ -63,6 +63,9 @@ public class Conta {
 	public Conta(int numeroConta, double saldo, Cliente cliente, String dataNasc) {
 	}
 
+	public Conta(Cliente cliente2, int numeroConta2) {
+	}
+
 	public int getNumeroConta() {
 		return numeroConta;
 	}
