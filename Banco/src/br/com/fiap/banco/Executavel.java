@@ -3,18 +3,11 @@ package br.com.fiap.banco;
 public class Executavel {
 	public static void main(String[] args) {
 
-		Conta conta1 = new Conta("Eros Machado", "123.456.789-00", 1001, 1000.00);
-		Conta conta2 = new Conta("João Silva", "987.654.321-00", 1002, 2000.00);
-		Conta conta3 = new Conta("Maria Oliveira", "111.222.333-44", 1003, 3000.00);
+		Conta conta1 = new Conta("Eros Machado", 1001, 1000.00, null);
+		Conta conta2 = new Conta("João Silva", 1002, 2000.00, null);
+		Conta conta3 = new Conta("Maria Oliveira", 1003, 3000.00, null);
 
-		
-		Cliente cliente1 = new Cliente("Eduardo Sousa","edua@gmail.com", "133.365.453/32", "(12) 99831-9649", 1002, 10000.00);
-		
-		//testes clientes:
-		
-		cliente1.getCpfCliente();
-		System.out.println("--------------------");
-		
+
 		//testes de conta
 		conta1.consultarSaldo();
 		conta1.sacar(300.00);

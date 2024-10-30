@@ -1,36 +1,23 @@
 package br.com.fiap.banco;
 
 public class Conta {
-	private String nomeCliente;
-	private String cpfCliente;
 	private int numeroConta;
 	private double saldo;
+	private Cliente cliente;
 
 	// constructor ctrl + 3 (generate constructor)
-	public Conta(String nomeCliente, String cpfCliente, int numeroConta, double saldo) {
-		super();
-		this.nomeCliente = nomeCliente;
-		this.cpfCliente = cpfCliente;
-		this.numeroConta = numeroConta;
-		this.saldo = saldo;
-	}
 
 	// metodos ctrl + 3 (getters and setters)
 
-	public String getNomeCliente() {
-		return nomeCliente;
+	public Conta(String nomeCliente, int numeroConta, double saldo, Cliente cliente) {
+		super();
+		this.numeroConta = numeroConta;
+		this.saldo = saldo;
+		this.setCliente(cliente);
 	}
 
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
-	}
-
-	public String getCpfCliente() {
-		return cpfCliente;
-	}
-
-	public void setCpfCliente(String cpfCliente) {
-		this.cpfCliente = cpfCliente;
+	public Conta(int numeroConta, double saldo, Cliente cliente) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getNumeroConta() {
@@ -51,18 +38,18 @@ public class Conta {
 
 	public boolean sacar(double valor) {
 		if (saldo >= valor) {
-			saldo -= valor;
+			this.saldo -= valor;
 			return true;
 		}
 		return false;
 	}
 
 	public void depositar(double valor) {
-		saldo += valor;
+		this.saldo += valor;
 	}
 
 	public void transferir(Conta contaDestino, double valor) {
-		if (sacar(valor)) {
+		if (this.sacar(valor)) {
 			contaDestino.depositar(valor);
 		}
 	}
@@ -72,8 +59,16 @@ public class Conta {
 	}
 
 	public void exibirSaldo() {
-		System.out.println("Nome: " + nomeCliente);
+		System.out.println("Numero do cliente: " + numeroConta);
 		System.out.println("Saldo: R$ " + saldo);
 		System.out.println("----------------");
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 }

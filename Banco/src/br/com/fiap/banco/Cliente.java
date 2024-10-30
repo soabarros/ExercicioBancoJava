@@ -1,12 +1,15 @@
 package br.com.fiap.banco;
 
+import java.util.Date;
+
 public class Cliente {
 	private String nomeCliente, emailCliente, cpfCliente, telefoneCliente;
 	private int numeroContaCliente;
 	private double saldoContaCliente;
+	private Date dataNasc;
 
 	public Cliente(String nomeCliente, String emailCliente, String cpfCliente, String telefoneCliente,
-			int numeroContaCliente, double saldoContaCliente) {
+			int numeroContaCliente, double saldoContaCliente, Date dateNasc, Date dataNasc) {
 		super();
 		this.nomeCliente = nomeCliente;
 		this.emailCliente = emailCliente;
@@ -14,6 +17,7 @@ public class Cliente {
 		this.telefoneCliente = telefoneCliente;
 		this.numeroContaCliente = numeroContaCliente;
 		this.saldoContaCliente = saldoContaCliente;
+		this.dataNasc = dataNasc;
 	}
 
 	public String getNomeCliente() {
@@ -62,6 +66,14 @@ public class Cliente {
 
 	public void setSaldoContaCliente(double saldoContaCliente) {
 		this.saldoContaCliente = saldoContaCliente;
+	}
+
+	public Date getDataNasc() {
+		return dataNasc;
+	}
+
+	public void setDataNasc(Date dataNasc) {
+		this.dataNasc = dataNasc;
 	}
 
 }
