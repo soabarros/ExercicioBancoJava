@@ -5,9 +5,8 @@ public class Conta {
 	private String cpfCliente;
 	private int numeroConta;
 	private double saldo;
-	
-	
-	//constructor ctrl + 3 (generate constructor)
+
+	// constructor ctrl + 3 (generate constructor)
 	public Conta(String nomeCliente, String cpfCliente, int numeroConta, double saldo) {
 		super();
 		this.nomeCliente = nomeCliente;
@@ -15,12 +14,8 @@ public class Conta {
 		this.numeroConta = numeroConta;
 		this.saldo = saldo;
 	}
-	
-	//metodos ctrl + 3 (getters and setters)
-	
-	
 
-
+	// metodos ctrl + 3 (getters and setters)
 
 	public String getNomeCliente() {
 		return nomeCliente;
@@ -53,7 +48,7 @@ public class Conta {
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
-	
+
 	public boolean sacar(double valor) {
 		if (saldo >= valor) {
 			saldo -= valor;
@@ -61,7 +56,6 @@ public class Conta {
 		}
 		return false;
 	}
-
 
 	public void depositar(double valor) {
 		saldo += valor;
@@ -79,7 +73,7 @@ public class Conta {
 
 	public void exibirSaldo() {
 		System.out.println("Nome: " + nomeCliente);
-		System.out.println("Saldo: R$ "+ saldo);
+		System.out.println("Saldo: R$ " + saldo);
 		System.out.println("----------------");
 	}
 }

@@ -7,6 +7,15 @@ public class Executavel {
 		Conta conta2 = new Conta("João Silva", "987.654.321-00", 1002, 2000.00);
 		Conta conta3 = new Conta("Maria Oliveira", "111.222.333-44", 1003, 3000.00);
 
+		
+		Cliente cliente1 = new Cliente("Eduardo Sousa","edua@gmail.com", "133.365.453/32", "(12) 99831-9649", 1002, 10000.00);
+		
+		//testes clientes:
+		
+		cliente1.getCpfCliente();
+		System.out.println("--------------------");
+		
+		//testes de conta
 		conta1.consultarSaldo();
 		conta1.sacar(300.00);
 		conta1.consultarSaldo();
