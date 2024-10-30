@@ -8,9 +8,9 @@ public class CriarConta {
 	public static void main(String[] args) {
 
 		Cliente cliente1 = new Cliente("Eduardo Sousa", "edua@gmail.com", "133.365.453/32", "(12) 99831-9649", 1002,
-				10000.00, null, null);
+				10000.00, "10/10/2003");
 		
-		Conta cliente11 = new Conta(1002, 2000.00, cliente1);
+		Conta cliente11 = new Conta(1002, 2000.00, cliente1, "10/10/2000");
 		cliente11.depositar(10000);
 		cliente11.consultarSaldo();
 

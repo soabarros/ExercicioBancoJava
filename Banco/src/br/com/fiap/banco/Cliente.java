@@ -1,15 +1,17 @@
 package br.com.fiap.banco;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Cliente {
 	private String nomeCliente, emailCliente, cpfCliente, telefoneCliente;
 	private int numeroContaCliente;
 	private double saldoContaCliente;
-	private Date dataNasc;
+	private Date dataNasc = new Date();
 
+	//construtor
 	public Cliente(String nomeCliente, String emailCliente, String cpfCliente, String telefoneCliente,
-			int numeroContaCliente, double saldoContaCliente, Date dateNasc, Date dataNasc) {
+			int numeroContaCliente, double saldoContaCliente, String dataNasc) {
 		super();
 		this.nomeCliente = nomeCliente;
 		this.emailCliente = emailCliente;
@@ -17,7 +19,13 @@ public class Cliente {
 		this.telefoneCliente = telefoneCliente;
 		this.numeroContaCliente = numeroContaCliente;
 		this.saldoContaCliente = saldoContaCliente;
-		this.dataNasc = dataNasc;
+		SimpleDateFormat format =new SimpleDateFormat("dd/MM/yyyy");
+		try {
+		this.dataNasc = format.parse(dataNasc);
+		}catch (ParseException e) {
+			System.err.println("Formato de data invalido: "+ dataNasc);
+			e.printStackTrace();
+		}
 	}
 
 	public String getNomeCliente() {
