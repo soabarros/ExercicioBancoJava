@@ -1,15 +1,14 @@
 package br.com.fiap.banco;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Conta {
-	private int numeroConta;
-	private double saldo;
+public abstract class Conta {
+	protected int numeroConta;
+	protected double saldo;
 	private Cliente cliente;
-	private Date dataNasc = new Date();
-	private Date dataAberturaConta = new Date();
+	protected Date dataNasc = new Date();
+	protected Date dataAberturaConta = new Date();
 
 	// constructor ctrl + 3 (generate constructor)
 	// metodos ctrl + 3 (getters and setters)
@@ -104,13 +103,9 @@ public class Conta {
 		System.out.println("Saldo da conta " + numeroConta + ": R$" + saldo);
 	}
 
-	public void exibirSaldo() {
-		System.out.println("Numero do cliente: " + numeroConta);
-		System.out.println("Saldo: R$ " + saldo);
-		System.out.println("Data de nascimento: "+dataNasc);
-		System.out.println("Data de abertura conta: "+dataAberturaConta);
-		System.out.println("----------------");
-	}
+	public abstract void exibirSaldo() ;
+		
+	
 
 	public Cliente getCliente() {
 		return cliente;
